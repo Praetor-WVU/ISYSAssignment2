@@ -1,0 +1,67 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Home page";
+}
+
+<div class="container">
+    <div class="row border border-primary m-3 p-2">
+        <a class="d-block p-2 bg-light rounded"
+           asp-page="/Privacy"
+           asp-route-Name="Billy"
+           asp-route-Age="25">
+            Go to Privacy — send Name=Billy, Age=25
+        </a>
+    </div>
+
+    <div class="row border border-primary m-3 p-2">
+        <form method="get" asp-page="/Privacy" class="form-get m-3 p-2">
+            <h1>GET</h1>
+            <span class="form-get">
+                <label asp-for="Person.Name">Enter name: </label>
+                <input type="text" name="Person.Name" id="name" />
+            </span>
+            <span class="form-get">
+                <label asp-for="Person.Age">Enter age: </label>
+                <input type="number" name="Person.Age" id="age" />
+            </span>
+            <span class="form-get">
+                <input type="submit" value="Submit" />
+            </span>
+        </form>
+    </div>
+
+    <div class="row border border-primary m-3 p-2">
+        <form method="post" asp-page="/Privacy" class="form-get m-3 p-2">
+            <h1>CROSSPOST</h1>
+            <span class="form-get">
+                <label asp-for="Person.Name">Enter name: </label>
+                <input type="text" name="Person.Name" id="name" />
+            </span>
+            <span class="form-get">
+                <label asp-for="Person.Age">Enter age: </label>
+                <input type="number" name="Person.Age" id="age" />
+            </span>
+            <span class="form-get">
+                <input type="submit" value="Submit" />
+            </span>
+        </form>
+    </div>
+
+    <div class="row border border-primary m-3 p-2">
+        <form method="post" asp-page="/Index" class="form-get m-3 p-2">
+            <h1>POSTBACK</h1>
+            <span class="form-get">
+                <label asp-for="Person.Name">Enter name: </label>
+                <input type="text" name="Person.Name" id="name" />
+            </span>
+            <span class="form-get">
+                <label asp-for="Person.Age">Enter age: </label>
+                <input type="number" name="Person.Age" id="age" />
+            </span>
+            <span class="form-get">
+                <input type="submit" value="Submit" />
+            </span>
+        </form>
+    </div>
+</div>

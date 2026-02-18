@@ -1,0 +1,22 @@
+﻿@page
+@model PrivacyModel
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+@{
+    if (Model.Person == null)
+    {
+        <h1>No birthdays today!</h1>
+    }
+    else if (Model.Person.Age == 0)
+    {
+        <h1>@Model.Person.Name is "0" years old?</h1>
+    }
+    else
+    {
+        for (int i = 1; i <= Model.Person.Age; i++)
+        {
+            <div>Happy @i birthday @Model.Person.Name!</div>
+        }
+    }
+}
